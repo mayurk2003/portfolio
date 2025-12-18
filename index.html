@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width"/>
+  <meta name="viewport" content="width=1200"/>
   <title>Mayur Kharde | Fintech MBA</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
@@ -519,24 +519,46 @@
       margin-top: 12px;
       font-size: 1.05rem;
     }
+  /* ===== ABOUT SECTION (FORCED LAPTOP VIEW) ===== */
+#about {
+  background: var(--bg-secondary);
+  padding: 60px 20px;
+}
 
-    /* ===== ABOUT SECTION ===== */
-    #about {
-      background: var(--bg-secondary);
-    }
+.about-grid {
+  display: flex;          /* Changed from grid to flex */
+  flex-direction: row;    /* Forces side-by-side even on mobile */
+  gap: 30px;              /* Reduced from 60px to remove the "big gap" */
+  align-items: flex-start;
+  max-width: 1200px;
+  margin: 0 auto;
+  min-width: 1100px;      /* Prevents the layout from collapsing on phones */
+}
 
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 60px;
-      align-items: center;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
+.about-image {
+  flex: 0 0 400px;        /* Fixes the image width so it doesn't shrink */
+  position: relative;
+}
 
-    .about-image {
-      position: relative;
-    }
+.about-content {
+  flex: 1;                /* Allows text to fill the remaining space */
+}
+
+/* Ensure counters stay in one row like laptop */
+.about-counters {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.counter-box {
+  flex: 1;
+  text-align: center;
+  padding: 15px;
+  background: var(--bg-primary);
+  border-radius: 10px;
+}
 
     /* UPDATED: Container for the image */
 .about-image-wrapper {
